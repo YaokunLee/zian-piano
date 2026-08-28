@@ -318,7 +318,6 @@ main {
   max-width: 1180px;
   margin: 0 auto;
   padding: 88px 32px;
-  border-top: 1px solid var(--line);
   scroll-margin-top: 74px;
 }
 
@@ -356,6 +355,10 @@ main {
   padding: 27px 0;
   border-bottom: 1px solid var(--line);
   transition: padding-left 0.25s ease, background 0.25s ease;
+}
+
+.simple-list > div:last-child {
+  border-bottom: 0;
 }
 
 .simple-list > div:hover {
