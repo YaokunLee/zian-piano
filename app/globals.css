@@ -256,28 +256,59 @@ main {
 }
 
 .video-placeholder {
+  position: relative;
+  isolation: isolate;
   display: flex;
   aspect-ratio: 16 / 10;
   align-items: center;
   justify-content: center;
-  background: #ebe8e2;
-  color: #6d6963;
+  overflow: hidden;
+  background-color: #ebe8e2;
+  background-position: center;
+  background-size: cover;
+  color: white;
   transition: transform 0.35s ease;
 }
 
-.video-placeholder span {
-  font-size: 12px;
-  letter-spacing: 0.16em;
+.video-placeholder::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(0 0 0 / 8%), rgb(0 0 0 / 38%));
+  content: "";
 }
 
-.video-placeholder b {
-  margin-left: 14px;
-  font-size: 23px;
-  font-weight: 400;
+.video-source {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-shadow: 0 1px 8px rgb(0 0 0 / 45%);
+}
+
+.video-play {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  padding-left: 4px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 50%;
+  background: rgb(0 0 0 / 42%);
+  box-shadow: 0 8px 30px rgb(0 0 0 / 18%);
+  font-size: 22px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .video-grid article:hover .video-placeholder {
   transform: scale(0.985);
+}
+
+.video-grid article:hover .video-play {
+  background: white;
+  color: var(--ink);
+  transform: scale(1.06);
 }
 
 .video-grid h3 {
@@ -449,6 +480,12 @@ footer {
   .video-grid {
     grid-template-columns: 1fr;
     gap: 34px;
+  }
+
+  .video-play {
+    width: 54px;
+    height: 54px;
+    font-size: 19px;
   }
 
   .why-copy p {

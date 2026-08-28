@@ -100,11 +100,13 @@ const highlights = [
 const videos = [
   {
     href: "https://www.youtube.com/watch?v=TeGQOlXMGNY",
+    thumbnail: "https://img.youtube.com/vi/TeGQOlXMGNY/hqdefault.jpg",
     title: "Chopin · Barcarolle, Op. 60",
     subtitle: "肖邦《船歌》Op. 60",
   },
   {
     href: "https://www.youtube.com/watch?v=0voCidZbcOA",
+    thumbnail: "https://img.youtube.com/vi/0voCidZbcOA/hqdefault.jpg",
     title: "Beethoven · Piano Sonata Op. 22, No. 11",
     subtitle: "贝多芬钢琴奏鸣曲 Op. 22, No. 11",
   },
@@ -205,9 +207,13 @@ export function PianoPortfolio() {
             {videos.map((video) => (
               <article key={video.href}>
                 <a href={video.href} target="_blank" rel="noopener noreferrer">
-                  <div className="video-placeholder" aria-hidden="true">
-                    <span>YouTube</span>
-                    <b>▶</b>
+                  <div
+                    className="video-placeholder"
+                    aria-hidden="true"
+                    style={{ backgroundImage: `url(${video.thumbnail})` }}
+                  >
+                    <span className="video-source">YouTube</span>
+                    <span className="video-play">▶</span>
                   </div>
                   <h3>{video.title}</h3>
                   <p>{video.subtitle}</p>
