@@ -342,7 +342,14 @@ export function PianoPortfolio() {
               <a href="mailto:shaozianan@163.com"><small>Email</small>shaozianan@163.com</a>
               <a href="tel:+4552764523"><small>Phone</small>+45 52764523</a>
               <span><small>WeChat</small>shaozianan</span>
-              <span><small>Facebook</small>Zian Piano</span>
+              <a
+                href="https://www.facebook.com/share/19MNqKw7RD/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Zian Piano on Facebook"
+              >
+                <small>Facebook</small>Open Facebook ↗
+              </a>
             </div>
           </div>
         </section>
