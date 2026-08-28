@@ -132,6 +132,7 @@ export function PianoPortfolio() {
       <nav className="nav" aria-label="Primary navigation">
         <div className="nav-inner">
           <a className="brand" href="#home">
+            <span className="brand-mark" aria-hidden="true">ZP</span>
             ZIAN PIANO
           </a>
           <div className="navlinks">
@@ -156,18 +157,31 @@ export function PianoPortfolio() {
 
       <main>
         <section className="hero" id="home">
-          <div>
+          <div className="hero-copy">
             <div className="eyebrow">Piano Performance · Music Education</div>
             <h1>Zian Piano</h1>
             <div className="subtitle">钢琴演奏 · 音乐教育</div>
             <p id="heroText" aria-live="polite">
               {heroText}
             </p>
+            <div className="hero-actions">
+              <a className="button-primary" href="#videos">View performances</a>
+              <a className="button-secondary" href="#contact">Book a lesson</a>
+            </div>
           </div>
-          <div className="portrait" role="img" aria-label="Zian Piano portrait placeholder">
-            <span>PORTRAIT</span>
-            <small>PHOTO COMING SOON · 个人照片待补充</small>
-          </div>
+          <a
+            className="hero-visual"
+            href={videos[0].href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Watch Chopin Barcarolle performance on YouTube"
+            style={{ backgroundImage: `url(${videos[0].thumbnail})` }}
+          >
+            <span className="hero-visual-kicker">Featured performance</span>
+            <strong>Chopin · Barcarolle</strong>
+            <small>Op. 60 · Copenhagen</small>
+            <span className="hero-watch">Watch <b>↗</b></span>
+          </a>
         </section>
 
         <section className="section clean-section" id="education">
@@ -223,20 +237,22 @@ export function PianoPortfolio() {
           </div>
         </section>
 
-        <section className="section" id="teaching">
+        <section className="section statement-section" id="teaching">
           <SectionTitle title="Teaching" chinese="钢琴教学" />
           <div className="card">
             <h3>My Approach · 我的教学方式</h3>
-            <p>
-              I teach children and adults with a focus on solid foundations, rhythm, musical expression, confidence and enjoyment. I adapt lessons to each student and aim to help them develop their own musical expression.
-            </p>
-            <p>
-              我教授儿童及成人，注重基础、节奏、音乐表达、自信与兴趣，并根据学生特点调整教学方式，帮助他们找到自己的音乐表达方式。
-            </p>
+            <div className="card-copy">
+              <p>
+                I teach children and adults with a focus on solid foundations, rhythm, musical expression, confidence and enjoyment. I adapt lessons to each student and aim to help them develop their own musical expression.
+              </p>
+              <p>
+                我教授儿童及成人，注重基础、节奏、音乐表达、自信与兴趣，并根据学生特点调整教学方式，帮助他们找到自己的音乐表达方式。
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="section clean-section" id="why-piano">
+        <section className="section clean-section tone-section" id="why-piano">
           <SectionTitle title="Why Learn Piano?" chinese="为什么要学钢琴？" />
           <div className="why-copy">
             <div className="zh-copy">
@@ -253,7 +269,7 @@ export function PianoPortfolio() {
           </div>
         </section>
 
-        <section className="section" id="about">
+        <section className="section statement-section about-section" id="about">
           <SectionTitle title="About" chinese="关于我" />
           <div className="card">
             <p>I am a professional pianist and music educator based in Copenhagen. I have been living and studying in Denmark for four years, with extensive experience in piano performance and teaching.</p>
@@ -283,18 +299,25 @@ export function PianoPortfolio() {
           </div>
         </section>
 
-        <section className="section clean-section" id="contact">
-          <SectionTitle title="Contact" chinese="联系方式" />
-          <div className="contact-clean">
-            <a href="mailto:shaozianan@163.com">shaozianan@163.com</a>
-            <a href="tel:+4552764523">+45 52764523</a>
-            <span>WeChat · shaozianan</span>
-            <span>Facebook · Zian Piano</span>
+        <section className="contact-section" id="contact">
+          <div className="contact-inner">
+            <SectionTitle title="Contact" chinese="联系方式" />
+            <div className="contact-clean">
+              <a href="mailto:shaozianan@163.com"><small>Email</small>shaozianan@163.com</a>
+              <a href="tel:+4552764523"><small>Phone</small>+45 52764523</a>
+              <span><small>WeChat</small>shaozianan</span>
+              <span><small>Facebook</small>Zian Piano</span>
+            </div>
           </div>
         </section>
       </main>
 
-      <footer>© 2026 Zian Piano · Copenhagen</footer>
+      <footer>
+        <div className="footer-inner">
+          <span>© 2026 Zian Piano · Copenhagen</span>
+          <a href="#home">Back to top ↑</a>
+        </div>
+      </footer>
     </>
   );
 }
