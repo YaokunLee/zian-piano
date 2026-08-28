@@ -1,6 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
+import applausePhoto from "@/pics/微信图片_20260828160902_622_65.jpg";
+import stagePhoto from "@/pics/微信图片_20260828160904_624_65.jpg";
+import portraitPhoto from "@/pics/微信图片_20260828160907_625_65.jpg";
 
 const education = [
   {
@@ -171,16 +175,22 @@ export function PianoPortfolio() {
           </div>
           <a
             className="hero-visual"
-            href={videos[0].href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Watch Chopin Barcarolle performance on YouTube"
-            style={{ backgroundImage: `url(${videos[0].thumbnail})` }}
+            href="#videos"
+            aria-label="View Zian Piano performances"
           >
-            <span className="hero-visual-kicker">Featured performance</span>
-            <strong>Chopin · Barcarolle</strong>
-            <small>Op. 60 · Copenhagen</small>
-            <span className="hero-watch">Watch <b>↗</b></span>
+            <Image
+              className="hero-visual-image"
+              src={portraitPhoto}
+              alt="Zian seated at a grand piano"
+              fill
+              sizes="(max-width: 760px) calc(100vw - 44px), (max-width: 1200px) 48vw, 560px"
+              placeholder="blur"
+              preload
+            />
+            <span className="hero-visual-kicker">Pianist · Educator</span>
+            <strong>At the piano</strong>
+            <small>Copenhagen · Denmark</small>
+            <span className="hero-watch">Performances <b>↓</b></span>
           </a>
         </section>
 
@@ -212,6 +222,32 @@ export function PianoPortfolio() {
                 <p>{item.content}</p>
               </div>
             ))}
+          </div>
+          <div className="performance-gallery" aria-label="Performance moments">
+            <figure className="performance-gallery-main">
+              <div className="performance-gallery-image">
+                <Image
+                  src={stagePhoto}
+                  alt="Zian performing Liszt at a lecture concert"
+                  fill
+                  sizes="(max-width: 760px) calc(100vw - 44px), 720px"
+                  placeholder="blur"
+                />
+              </div>
+              <figcaption><span>Lecture-performance</span>Liszt · Copenhagen</figcaption>
+            </figure>
+            <figure className="performance-gallery-secondary">
+              <div className="performance-gallery-image">
+                <Image
+                  src={applausePhoto}
+                  alt="Zian receiving applause and flowers after a performance"
+                  fill
+                  sizes="(max-width: 760px) calc(100vw - 44px), 380px"
+                  placeholder="blur"
+                />
+              </div>
+              <figcaption><span>After the performance</span>Music · Audience · Connection</figcaption>
+            </figure>
           </div>
         </section>
 

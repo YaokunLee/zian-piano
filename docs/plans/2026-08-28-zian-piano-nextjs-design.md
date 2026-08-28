@@ -14,13 +14,13 @@ Convert the supplied single-file portfolio into a maintainable Next.js applicati
 
 ## Asset boundary
 
-The source references `assets/hero.jpg`, but the supplied folder contains no such asset. The polished hero therefore uses a still from the owner's linked Chopin performance rather than publishing an unrelated person's photo. The README retains the replacement guidance for a future portrait.
+The source referenced `assets/hero.jpg`, which was absent from the original transfer. The owner later supplied three photographs in `pics/`; the square piano portrait now anchors the hero, while the stage and applause photographs form a performance-story gallery below the professional highlights.
 
 ## Visual polish
 
 - Direction: warm recital programme meets Copenhagen editorial design.
 - Keep the existing bilingual content and section order.
-- Use the linked performance imagery as the visual anchor, with warm paper, walnut and ink tones.
+- Use the owner's supplied portrait and performance imagery as the visual anchor, with warm paper, walnut and ink tones.
 - Strengthen hierarchy through tighter section rhythm, clear calls to action, framed video previews and a dark contact closing section.
 - Preserve fast static rendering, graceful thumbnail fallbacks and reduced-motion support.
 

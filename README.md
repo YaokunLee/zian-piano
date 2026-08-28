@@ -11,6 +11,6 @@ npm run dev
 
 Open <http://localhost:3000>.
 
-## Portrait image
+## Images
 
-The received HTML referenced `assets/hero.jpg`, but that file was not included. The current hero uses a still from the linked Chopin performance instead. When the original portrait becomes available, place it at `public/hero.jpg` and update the hero visual in `components/piano-portfolio.tsx`.
+The original HTML referenced `assets/hero.jpg`, which was not included in the transfer. The current site uses the owner's supplied portrait and performance photographs from `pics/` through static Next.js image imports.

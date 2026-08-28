@@ -242,10 +242,15 @@ main {
   overflow: hidden;
   padding: clamp(25px, 4vw, 46px);
   background-color: #513c32;
-  background-position: center;
-  background-size: cover;
   box-shadow: 24px 26px 0 var(--paper-deep);
   color: white;
+}
+
+.hero-visual-image {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center 44%;
+  filter: saturate(0.92) contrast(1.03);
 }
 
 .hero-visual::before {
@@ -306,7 +311,7 @@ main {
 }
 
 .hero-visual:hover .hero-watch b {
-  transform: translate(3px, -3px);
+  transform: translateY(3px);
 }
 
 .section {
@@ -401,6 +406,61 @@ main {
 #highlights .simple-list > div:first-child p strong {
   color: var(--accent-dark);
   font-size: 17px;
+}
+
+.performance-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1.32fr) minmax(280px, 0.68fr);
+  gap: 18px;
+  margin-top: 62px;
+}
+
+.performance-gallery figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.performance-gallery-image {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  background: #d7c8b8;
+}
+
+.performance-gallery-image img {
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.performance-gallery-main .performance-gallery-image img {
+  object-position: center;
+}
+
+.performance-gallery-secondary .performance-gallery-image img {
+  object-position: center;
+}
+
+.performance-gallery figure:hover img {
+  transform: scale(1.025);
+}
+
+.performance-gallery figcaption {
+  display: flex;
+  flex-direction: column;
+  padding-top: 14px;
+  color: var(--muted);
+  font-family: "Iowan Old Style", Baskerville, Georgia, serif;
+  font-size: 15px;
+}
+
+.performance-gallery figcaption span {
+  margin-bottom: 4px;
+  color: var(--accent-dark);
+  font-family: "Avenir Next", Avenir, sans-serif;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .video-grid {
@@ -809,6 +869,22 @@ footer {
 
   .simple-list p {
     font-size: 13px;
+  }
+
+  .performance-gallery {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 44px;
+  }
+
+  .performance-gallery-main .performance-gallery-image {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .performance-gallery-secondary .performance-gallery-image {
+    aspect-ratio: 3 / 4;
+    min-height: 0;
   }
 
   .video-grid {
